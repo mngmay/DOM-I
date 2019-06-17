@@ -67,10 +67,12 @@ const ctaImg = document.querySelector("#cta-img");
 ctaImg.setAttribute("src", siteContent["cta"]["img-src"]);
 
 const ctah1 = document.querySelector(".cta h1");
-ctah1.textContent = siteContent["cta"]["h1"];
+ctah1.innerHTML = siteContent["cta"]["h1"].split(" ").join("<br>");
 
 const ctabtn = document.querySelector(".cta button");
 ctabtn.textContent = siteContent["cta"]["button"];
+
+
 
 // <-------- End CTA
 
@@ -111,7 +113,7 @@ for (let i = 0; i < 5; i++) {
 
 // <-------- End Main Content
 
-// Bottom Content
+// Contact 
 
 const btmh4 = document.querySelector(".contact h4");
 btmh4.textContent = siteContent["contact"]["contact-h4"];
@@ -136,5 +138,11 @@ for (let i = 0; i < 3; i++) {
   contactP[i].textContent = siteContent["contact"][`${section}`];
 };
 
+// <-------- End Contact
+
+// Footer
+
 const copyright = document.querySelector("footer p");
 copyright.textContent = siteContent["footer"]["copyright"];
+
+// <-------- Footer
