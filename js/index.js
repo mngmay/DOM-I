@@ -50,6 +50,16 @@ logo.setAttribute("src", siteContent["nav"]["img-src"]);
 
 const navLinks = document.querySelectorAll("nav a");
 
+const nav = document.querySelector("nav");
+
+const cats = document.createElement("Cats");
+nav.appendChild(cats);
+cats.textContent = "Cats"; 
+
+const dogs = document.createElement("Dogs");
+nav.prepend(dogs);
+dogs.textContent = "Dogs";
+
 navLinks.forEach((link, index) => {
   //parameter keeps track of where you're at, setting index as parameter to parse through links
   index += 1;
@@ -60,6 +70,7 @@ navLinks.forEach(link => {
   link.setAttribute("style", "color: green");
 });
 
+
 // <-------- End Navigation
 
 //CTA Section
@@ -68,6 +79,10 @@ ctaImg.setAttribute("src", siteContent["cta"]["img-src"]);
 
 const ctah1 = document.querySelector(".cta h1");
 ctah1.innerHTML = siteContent["cta"]["h1"].split(" ").join("<br>");
+
+//textcontent instead of innerHTML doesn't work
+//beware innerHTML is not great for security
+// "\n" also does not work 
 
 const ctabtn = document.querySelector(".cta button");
 ctabtn.textContent = siteContent["cta"]["button"];
