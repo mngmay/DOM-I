@@ -118,7 +118,23 @@ btmh4.textContent = siteContent["contact"]["contact-h4"];
 
 const contactP = document.querySelectorAll(".contact p");
 
-contactP.forEach((content, index) => {
-  index += 1;
-  content.textContent = siteContent["contact"];
-});
+
+for (let i = 0; i < 3; i++) {
+  let section = "";
+  switch (i) {
+    case 0:
+      section = "address";
+      break;
+    case 1:
+      section = "phone";
+      break;
+    case 2:
+      section = "email";
+      break;
+  }
+
+  contactP[i].textContent = siteContent["contact"][`${section}`];
+};
+
+const copyright = document.querySelector("footer p");
+copyright.textContent = siteContent["footer"]["copyright"];
