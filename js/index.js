@@ -48,8 +48,6 @@ logo.setAttribute("src", siteContent["nav"]["img-src"]);
 
 // Navigation
 
-const navLinks = document.querySelectorAll("nav a"); //for some reason this needs to be done first and not after the nav selector
-
 const nav = document.querySelector("nav");
 
 const cats = document.createElement("a");
@@ -60,15 +58,19 @@ const dogs = document.createElement("a"); //specify what kind of element you're 
 nav.prepend(dogs);
 dogs.textContent = "Dogs";
 
+const navLinks = document.querySelectorAll("nav a");
+
 navLinks.forEach((link, index) => {
   //parameter keeps track of where you're at, setting index as parameter to parse through links
-  index += 1;
-  link.textContent = siteContent["nav"]["nav-item-" + index];
+  //index conditions skip the added a elements - if including the added elements, forEach skips them and overwrites them.  This removes our need for the old code that creates a new selector
+  if (index > 0 && index <= 6) {
+    link.textContent = siteContent["nav"]["nav-item-" + index];
+  }
 });
 
-const updatedNavLinks = document.querySelectorAll("nav a");  //updates the query selector to include the new nav items added
+// const updatedNavLinks = document.querySelectorAll("nav a"); //updates the query selector to include the new nav items added
 
-updatedNavLinks.forEach(link => {
+navLinks.forEach(link => {
   link.setAttribute("style", "color: green");
 });
 
