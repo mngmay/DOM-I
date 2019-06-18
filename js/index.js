@@ -48,19 +48,17 @@ logo.setAttribute("src", siteContent["nav"]["img-src"]);
 
 // Navigation
 
-const navLinks = document.querySelectorAll("nav a");
+const navLinks = document.querySelectorAll("nav a"); //for some reason this needs to be done first and not after the nav selector
 
 const nav = document.querySelector("nav");
 
-const cats = document.createElement("Cats");
+const cats = document.createElement("a");
 nav.appendChild(cats);
 cats.textContent = "Cats";
-cats.style.color = "green"; 
 
-const dogs = document.createElement("Dogs");
+const dogs = document.createElement("a"); //specify what kind of element you're creating
 nav.prepend(dogs);
 dogs.textContent = "Dogs";
-dogs.style.color = "green"; 
 
 navLinks.forEach((link, index) => {
   //parameter keeps track of where you're at, setting index as parameter to parse through links
@@ -68,7 +66,9 @@ navLinks.forEach((link, index) => {
   link.textContent = siteContent["nav"]["nav-item-" + index];
 });
 
-navLinks.forEach(link => {
+const updatedNavLinks = document.querySelectorAll("nav a");  //updates the query selector to include the new nav items added
+
+updatedNavLinks.forEach(link => {
   link.setAttribute("style", "color: green");
 });
 
