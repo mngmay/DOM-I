@@ -54,11 +54,13 @@ const nav = document.querySelector("nav");
 
 const cats = document.createElement("Cats");
 nav.appendChild(cats);
-cats.textContent = "Cats"; 
+cats.textContent = "Cats";
+cats.style.color = "green"; 
 
 const dogs = document.createElement("Dogs");
 nav.prepend(dogs);
 dogs.textContent = "Dogs";
+dogs.style.color = "green"; 
 
 navLinks.forEach((link, index) => {
   //parameter keeps track of where you're at, setting index as parameter to parse through links
