@@ -30,9 +30,9 @@ function timer() {
               if (secondOnesCount === 9) {
                 secondOnesCount = 0;
                 secondTensCount++;
-                if ((digits.textContent = "10:00")) {
-                  digits.classList.add("redDigit", "digit");
-                }
+                digits.textContent = "10:00";
+                digits.classList.add("redDigit", "digit");
+                clearInterval(interval);
               }
             }
           }
@@ -56,6 +56,12 @@ function reset() {
   msHundredsCount = 0;
   secondOnesCount = 0;
   secondTensCount = 0;
+
+  if (digits.textContent === "10:00") {
+    console.log(digits);
+    digits.textContent = "0:00:00";
+    digits.classList.remove("redDigit");
+  }
 }
 
 //If you wanted to create buttons from JS only
