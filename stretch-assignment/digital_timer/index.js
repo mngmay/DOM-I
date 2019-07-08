@@ -4,7 +4,7 @@ const msHundreds = document.querySelector("#msHundreds");
 const msTens = document.querySelector("#msTens");
 const digits = document.querySelector(".digits");
 
-let interval = window.setInterval(timer, 10);
+let interval;
 let msTensCount = 0;
 let msHundredsCount = 0;
 let secondOnesCount = 0;
@@ -30,7 +30,10 @@ function timer() {
               if (secondOnesCount === 9) {
                 secondOnesCount = 0;
                 secondTensCount++;
-                digits.textContent = "10:00";
+                msTens.textContent = 0;
+                msHundreds.textContent = 0;
+                secondOnes.textContent = 0;
+                secondTens.textContent = 1;
                 digits.classList.add("redDigit", "digit");
                 clearInterval(interval);
               }
@@ -58,7 +61,7 @@ function flagIt() {
     secondTensCount === 0
   ) {
     flag = true;
-    console.log(flag);
+    interval = setInterval(timer, 10);
   }
 }
 
@@ -68,12 +71,10 @@ function reset() {
   secondOnesCount = 0;
   secondTensCount = 0;
 
-  if (digits.textContent === "10:00") {
-    console.log(digits);
-    digits.textContent = "0:00:00";
+  if (secondTens.textContent == 1) {
+    secondTens.textContent = 0;
     digits.classList.remove("redDigit");
     flag = false;
-    console.log(flag);
   }
 }
 
