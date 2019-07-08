@@ -2,8 +2,9 @@ const secondTens = document.querySelector("#secondTens");
 const secondOnes = document.querySelector("#secondOnes");
 const msHundreds = document.querySelector("#msHundreds");
 const msTens = document.querySelector("#msTens");
+const digits = document.querySelector(".digits");
 
-window.setInterval(timer, 10);
+let interval = window.setInterval(timer, 10);
 let msTensCount = 0;
 let msHundredsCount = 0;
 let secondOnesCount = 0;
@@ -28,6 +29,10 @@ function timer() {
             if (secondOnesCount === 9) {
               secondOnesCount = 0;
               secondTensCount++;
+              if ((digits.textContent = "10:00")) {
+                digits.classList.add("redDigit");
+                clearInterval(interval);
+              }
             }
           }
         }
