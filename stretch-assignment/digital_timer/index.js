@@ -30,8 +30,7 @@ function timer() {
               secondOnesCount = 0;
               secondTensCount++;
               if ((digits.textContent = "10:00")) {
-                digits.classList.add("redDigit");
-                clearInterval(interval);
+                digits.classList.add("redDigit", "digit");
               }
             }
           }
