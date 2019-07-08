@@ -47,8 +47,19 @@ function timer() {
 document.querySelector(".start").addEventListener("click", flagIt);
 document.querySelector(".reset").addEventListener("click", reset);
 
+//Event Listener Functions
+
 function flagIt() {
-  flag = true;
+  if (
+    // only allows Start to fire if all digits are set to 0
+    msTensCount === 0 &&
+    msHundredsCount === 0 &&
+    secondOnesCount === 0 &&
+    secondTensCount === 0
+  ) {
+    flag = true;
+    console.log(flag);
+  }
 }
 
 function reset() {
@@ -61,6 +72,8 @@ function reset() {
     console.log(digits);
     digits.textContent = "0:00:00";
     digits.classList.remove("redDigit");
+    flag = false;
+    console.log(flag);
   }
 }
 
