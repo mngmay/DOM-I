@@ -39,3 +39,13 @@ function timer() {
     }
   }
 }
+
+//If you wanted to create buttons from JS only
+// let startBtn = document.createElement("button");
+// startBtn.textContent = "Start";
+
+// let resetBtn = document.createElement("button");
+// resetBtn.textContent = "Reset";
+
+// digits.append(startBtn);
+// digits.append(resetBtn);
