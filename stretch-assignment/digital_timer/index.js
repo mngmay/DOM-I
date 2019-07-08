@@ -11,9 +11,15 @@ function timer() {
   msTens.textContent = msTensCount;
   msHundreds.textContent = msHundredsCount;
   if (msTensCount < 9) {
-    msTensCount += 1;
+    msTensCount++;
     if (msTensCount === 9) {
       msTensCount = 0;
+      if (msHundredsCount < 9) {
+        msHundredsCount++;
+        if (msHundredsCount === 9) {
+          msHundredsCount = 0;
+        }
+      }
     }
     console.log(msTensCount);
   }
