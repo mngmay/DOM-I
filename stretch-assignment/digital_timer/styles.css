@@ -12,3 +12,22 @@ body {
 .redDigit {
   color: red;
 }
+
+.timer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button {
+  font-size: 20px;
+  border: 1px solid;
+}
+
+.start {
+  color: green;
+}
+
+.reset {
+  color: red;
+}
